@@ -1,3 +1,5 @@
+import pandas as pd
+
 """
 Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
 datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y 
@@ -5,6 +7,7 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 librerias de pandas para resolver las preguntas.
 """
 
+path = "files/input/tbl0.tsv"
 
 def pregunta_09():
     """
@@ -23,3 +26,12 @@ def pregunta_09():
     39  39  E   5  1998-01-26  1998
 
     """
+
+    df = pd.read_csv(path, sep='\t')
+
+    # Se agrega la columna 'year' con el año de 'c3'
+    # Extraer el año directamente de la columna 'c3' usando str.split
+    df['year'] = df['c3'].str.split("-").str[0]
+    return df
+
+print(pregunta_09())

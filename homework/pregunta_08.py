@@ -1,3 +1,5 @@
+import pandas as pd
+
 """
 Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
 datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y 
@@ -5,6 +7,7 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 librerias de pandas para resolver las preguntas.
 """
 
+path = "files/input/tbl0.tsv"
 
 def pregunta_08():
     """
@@ -22,3 +25,11 @@ def pregunta_08():
     39   39   E    5  1998-01-26    44
 
     """
+    df = pd.read_csv(path, sep='\t')
+
+    # Se agrega la columna 'suma' con la suma de 'c0' y 'c2'
+    df['suma'] = df['c0'] + df['c2']
+    return df
+
+
+print(pregunta_08())

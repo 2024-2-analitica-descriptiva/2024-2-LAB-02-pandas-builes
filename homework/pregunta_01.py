@@ -8,7 +8,7 @@ librerias de pandas para resolver las preguntas.
 """
 
 #ruta de los archivos
-path = "../files/input/tbl0.tsv"
+path = "files/input/tbl0.tsv"
 
 def pregunta_01():
     """
@@ -23,6 +23,7 @@ def pregunta_01():
     df = pd.read_csv(path, sep='\t')
     
     # retornamos la cantidad de filas
+    # shape retorna una tupla con la cantidad de filas y columnas
     # shape[0] retorna la cantidad de filas
     return df.shape[0]
 
